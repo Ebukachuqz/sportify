@@ -1,25 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
 
-function App() {
+import React from "react";
+import Header from "./components/Header/Header";
+import { BrowserRouter, Routes } from "react-router-dom";
+import { Box, Container, CssBaseline, styled } from "@mui/material";
+
+const MainContainer = styled("div")`
+  width: 100%;
+`;
+
+const Containerr = styled(Box)`
+  width: 100%;
+  margin: auto;
+  max-width: 700px;
+`;
+
+const BodyContainer = styled("div")`
+  margin-top: -50px;
+  padding: 20px;
+  z-index: 10;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+`;
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <CssBaseline />
+      <MainContainer>
+        <Header />
+        <Containerr>
+          <BodyContainer>
+            <BrowserRouter>
+              <Routes></Routes>
+            </BrowserRouter>
+          </BodyContainer>
+        </Containerr>
+      </MainContainer>
     </div>
   );
-}
+};
 
 export default App;
