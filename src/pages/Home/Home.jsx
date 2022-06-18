@@ -1,6 +1,7 @@
 import { Grid } from "@mui/material";
 import React from "react";
 import CompetitionCard from "../../components/Competitions/CompetitionCard";
+import Loading from "../../components/Loading/Loading";
 import useFetch from "../../hooks/useFetch";
 
 const url = `https://api.football-data.org/v2/competitions?areas=2077&plan=TIER_ONE`;
@@ -14,7 +15,7 @@ const Home = () => {
     <>
       <h4>All Competitions</h4>
       {loading ? (
-        "Loading"
+        <Loading />
       ) : (
         <Grid container spacing={{ xs: 2 }}>
           {competitions.map((competition) => {
