@@ -2,8 +2,9 @@ import "./App.css";
 
 import React from "react";
 import Header from "./components/Header/Header";
-import { BrowserRouter, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Box, Container, CssBaseline, styled } from "@mui/material";
+import Home from "./pages/Home/Home";
 
 const MainContainer = styled("div")`
   width: 100%;
@@ -17,7 +18,7 @@ const Containerr = styled(Box)`
 
 const BodyContainer = styled("div")`
   margin-top: -50px;
-  padding: 20px;
+  padding: 0 20px;
   z-index: 10;
   position: relative;
   display: flex;
@@ -38,7 +39,9 @@ const App = () => {
         <Containerr>
           <BodyContainer>
             <BrowserRouter>
-              <Routes></Routes>
+              <Routes>
+                <Route path="/" element={<Home />} />
+              </Routes>
             </BrowserRouter>
           </BodyContainer>
         </Containerr>
