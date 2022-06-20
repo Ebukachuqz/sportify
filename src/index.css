@@ -6,6 +6,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.active {
+  border-bottom: 3px solid white;
+}
+
 h1,
 h2,
 h3,

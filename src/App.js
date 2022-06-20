@@ -5,6 +5,8 @@ import Header from "./components/Header/Header";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Box, Container, CssBaseline, styled } from "@mui/material";
 import Home from "./pages/Home/Home";
+import Competition from "./pages/Competition/Competition";
+import Error from "./pages/Error/Error";
 
 const MainContainer = styled("div")`
   width: 100%;
@@ -41,6 +43,8 @@ const App = () => {
             <BrowserRouter>
               <Routes>
                 <Route path="/" element={<Home />} />
+                <Route path="/competition/:id" element={<Competition />} />
+                <Route path="*" element={<Error />} />
               </Routes>
             </BrowserRouter>
           </BodyContainer>

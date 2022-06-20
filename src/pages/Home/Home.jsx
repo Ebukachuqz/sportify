@@ -1,5 +1,6 @@
 import { Grid } from "@mui/material";
 import React from "react";
+import { Link } from "react-router-dom";
 import CompetitionCard from "../../components/Competitions/CompetitionCard";
 import Loading from "../../components/Loading/Loading";
 import useFetch from "../../hooks/useFetch";
@@ -21,11 +22,16 @@ const Home = () => {
           {competitions.map((competition) => {
             return (
               <Grid item xs={12} sm={6} key={competition.id}>
-                <CompetitionCard
-                  name={competition.name}
-                  image={competition.emblemUrl}
-                  country={competition.area.name}
-                />
+                <Link
+                  style={{ textDecoration: "none" }}
+                  to={`/competition/${competition.id}`}
+                >
+                  <CompetitionCard
+                    name={competition.name}
+                    image={competition.emblemUrl}
+                    country={competition.area.name}
+                  />
+                </Link>
               </Grid>
             );
           })}

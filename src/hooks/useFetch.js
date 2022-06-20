@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import { useEffect } from "react";
 
 const useFetch = (url) => {
@@ -12,16 +12,16 @@ const useFetch = (url) => {
     },
   };
 
-  const getData = async () => {
+  const getData = useCallback(async () => {
     const response = await axios.get(url, headers);
     const result = response.data;
     setData(result);
     setLoading(false);
-  };
+  }, [url]);
 
   useEffect(() => {
     getData();
-  }, [url]);
+  }, [url, getData]);
   return { data, loading };
 };
 
